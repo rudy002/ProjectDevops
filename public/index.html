@@ -4,24 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test new page</title>
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <label for="etudiant">Étudiant :</label>
-    <input type="text" id="etudiant" class="button">
-  </div>
-  <div>
-    <label for="note1">Note 1 :</label>
-    <input type="text" id="note1" class="button">
-  </div>
-  <div>
-    <label for="note2">Note 2 :</label>
-    <input type="text" id="note2" class="button">
-  </div>
-  <div>
-    <label for="note3">Note 3 :</label>
-    <input type="text" id="note3" class="button">
-  </div>
-    
+  <div class="container mt-4">
+    <h1>Formulaire d'étudiant</h1>
+    <form id="studentForm">
+        <div class="form-group">
+            <label for="student">Student :</label>
+            <input type="text" id="student" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="grade1">Grade 1 :</label>
+            <input type="text" id="grade1" class="form-control">
+            <div id="grade1Error" class="error-message"></div>
+        </div>
+        <div class="form-group">
+            <label for="grade2">Grade 2 :</label>
+            <input type="text" id="grade2" class="form-control">
+            <div id="grade2Error" class="error-message"></div>
+        </div>
+        <div class="form-group">
+            <label for="grade3">Grade 3 :</label>
+            <input type="text" id="grade3" class="form-control">
+            <div id="grade3Error" class="error-message"></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<script src="script.js"></script>   
 </body>
 </html>
