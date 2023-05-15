@@ -1,12 +1,17 @@
 const express = require('express');
+//for interacting with the frontend
+const path = require('path');
 
 const app = express();
 
-app.get('/',  (req, res) => {
-    res.send('Hello World');
+app.get('/api',  (req, res) => {
+    res.send('Hello World from the API');
     });
-app.get('/test', (req, res) => {
+app.get('/api/test', (req, res) => {
     res.send('Test Hello');
     });
+
+    app.use(express.static(path.join(__dirname, 'public')));
+
 
 module.exports = app;
