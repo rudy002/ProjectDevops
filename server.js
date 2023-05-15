@@ -13,5 +13,10 @@ app.get('/api/test', (req, res) => {
 
     app.use(express.static(path.join(__dirname, 'public')));
 
+    app.get('/index', (req, res) => {
+        res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    });
+
+
 
 module.exports = app;
