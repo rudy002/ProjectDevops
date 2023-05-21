@@ -1,5 +1,3 @@
-
-
 document.getElementById('studentForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -25,6 +23,11 @@ document.getElementById('studentForm').addEventListener('submit', function(e) {
 
     // Si toutes les validations sont réussies, vous pouvez soumettre le formulaire
     if (!hasErrors()) {
+        var loader = document.getElementById('loader');
+        var successMessage = document.getElementById('successMessage');
+
+        loader.style.display = 'block';
+
         var studentData = { name: document.getElementById('student').value, grade1: grade1, grade2: grade2, grade3: grade3 };
 
         fetch('/student', {
@@ -42,9 +45,13 @@ document.getElementById('studentForm').addEventListener('submit', function(e) {
         })
         .then(function(data) {
             console.log("data " + data);
+            successMessage.style.display = 'block';
+            loader.style.display = 'none';
         })
         .catch(function(error) {
             console.error(error);
+            loader.style.display = 'none';
+
         });
         
     }
