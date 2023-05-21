@@ -35,14 +35,16 @@ document.getElementById('studentForm').addEventListener('submit', function(e) {
             body: JSON.stringify(studentData)
         })
         .then(function(response) {
-            return response.json();
-            console.log("response " + response);
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response.text();
         })
         .then(function(data) {
             console.log("data " + data);
         })
         .catch(function(error) {
-            console.log("error " + error);
+            console.error(error);
         });
         
     }
